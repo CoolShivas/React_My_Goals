@@ -8,7 +8,11 @@ const CourseInput = props => {
 
   const [isBlankValid, setIsBlankValid] = useState(true);
 
+
   const goalInputChangeHandler = event => {
+    if (event.target.value.trim().length > 0) {
+      setIsBlankValid(true);
+    }
     setEnteredValue(event.target.value);
   };
 
@@ -28,14 +32,19 @@ const CourseInput = props => {
         <input
           style={{
             borderColor: !isBlankValid ? "red" : "black",
-            background: !isBlankValid ? "salmon" : "transparent"
+            background: !isBlankValid ? "powderblue" : "transparent"
           }}
           type="text"
           onChange={goalInputChangeHandler}
         />
       </div>
-      <Button type="submit">Add Goal</Button>
-    </form>
+      <Button type="submit"
+        style={{
+          backgroundColor: !isBlankValid ? "red" : "#ac0e77"
+        }}
+      >Add Goal</Button>
+
+    </form >
   );
 };
 
