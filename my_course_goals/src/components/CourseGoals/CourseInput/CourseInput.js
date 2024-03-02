@@ -39,7 +39,7 @@ const CourseInput = props => {
         />
       </div>
       <Button type="submit"
-        style={{
+        styleABC={{
           backgroundColor: !isBlankValid ? "red" : "#ac0e77"
         }}
       >Add Goal</Button>
